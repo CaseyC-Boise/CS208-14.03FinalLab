@@ -1,7 +1,30 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title= title || "Downtown Donuts"
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Italianno&family=Montserrat:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="/javascripts/menu.js" defer)
   body
-    block content
+
+    header.navbar
+      .nav-brand
+        a(href="/")
+          img(src="/images/logo.png" alt="Downtown Donuts")
+
+      button.menu-toggle(type="button") ☰
+
+      nav.nav-links
+        a(href="/") Home
+        a(href="/menu") Menu
+        a(href="/about") About
+        a(href="/comments") Comments
+
+    main.content
+      block content
+
+    footer.footer
+      p © 2024 Downtown Donuts — Established 1992
