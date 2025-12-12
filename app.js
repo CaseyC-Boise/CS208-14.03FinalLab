@@ -6,10 +6,10 @@ const path = require('path');
 const { dbMiddleware } = require('./bin/db');
 
 // Routers
-const indexRouter = require('./routes/index');
-const commentsRouter = require('./routes/comments');
-const menuRouter = require('./routes/menu');
-const aboutRouter = require('./routes/about');
+const indexRouter = require('./routes/index'); //Home Page
+const commentsRouter = require('./routes/comments'); //Comments Page
+const menuRouter = require('./routes/menu'); //Menu Page
+const aboutRouter = require('./routes/about'); //About Page
 
 const app = express();
 
@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(dbMiddleware);
 
 // Routes
-app.use('/', indexRouter);
-app.use('/comments', commentsRouter);
-app.use('/menu', menuRouter);
-app.use('/about', aboutRouter);
+app.use('/', indexRouter); //Home page
+app.use('/comments', commentsRouter); //Comments page
+app.use('/menu', menuRouter); //Menu Page
+app.use('/about', aboutRouter); //About Page
 
 // 404 handler
 app.use(function (req, res, next) {
