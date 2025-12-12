@@ -1,6 +1,7 @@
 -- Downtown Donuts Comments Table Setup
 -- Run this file with: mysql -u root -p < setup_scripts/create_comments_table.sql
 
+CREATE DATABASE IF NOT EXISTS cs208demo;
 USE cs208demo;
 
 CREATE TABLE IF NOT EXISTS comments (
